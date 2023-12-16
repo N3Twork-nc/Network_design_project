@@ -1,0 +1,30 @@
+conf t
+ip routing
+int f0/1
+no sw
+ip add 172.16.1.2 255.255.255.252
+no shut
+int f0/2
+no sw
+ip add 172.16.3.2 255.255.255.252
+no shut
+int f0/3
+no sw
+ip add 172.16.5.1 255.255.255.252
+no shut
+int f0/4
+no sw
+ip add 172.16.6.1 255.255.255.252
+no shut
+int f0/5
+no sw
+ip add 172.16.8.1 255.255.255.252
+no shut
+int f0/6
+no sw
+ip add 172.16.10.1 255.255.255.252
+no shut
+int f0/7
+no sw
+ip add 172.16.12.1 255.255.255.252
+no shut

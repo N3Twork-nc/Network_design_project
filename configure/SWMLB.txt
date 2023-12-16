@@ -1,0 +1,72 @@
+conf t
+ip routing
+vlan 6
+int vlan 6
+ip add 192.168.6.1 255.255.255.240
+
+vlan 7
+int vlan 7
+ip add 192.168.7.1 255.255.255.192
+
+vlan 8
+int vlan 8
+ip add 192.168.8.1 255.255.255.192
+
+vlan 9
+int vlan 9
+ip add 192.168.9.1 255.255.255.192
+
+vlan 10
+int vlan 10
+ip add 192.168.10.1 255.255.255.192
+vlan 11
+int vlan 11
+ip add 192.168.11.1 255.255.255.192
+
+vlan 12
+int vlan 12
+ip add 192.168.12.1 255.255.255.192
+
+vlan 13
+int vlan 13
+ip add 192.168.13.1 255.255.255.192
+
+vlan 14
+int vlan 14
+ip add 192.168.14.1 255.255.255.192
+
+vlan 15
+int vlan 15
+ip add 192.168.15.1 255.255.255.192
+
+vlan 16
+int vlan 16
+ip add 192.168.16.1 255.255.255.240
+
+vlan 17
+int vlan 17
+ip add 192.168.17.1 255.255.255.192
+
+vlan 18
+int vlan 18
+ip add 192.168.18.1 255.255.255.192
+
+vlan 19
+int vlan 19
+ip add 192.168.19.1 255.255.255.192
+
+vlan 20
+int vlan 20
+ip add 192.168.20.1 255.255.255.192
+
+vlan 21
+int vlan 21
+ip add 192.168.21.1 255.255.255.240
+
+int g0/1 
+no sw
+ip add 172.16.8.2 255.255.255.252
+
+int g0/2 
+no sw
+ip add 172.16.9.2 255.255.255.252
