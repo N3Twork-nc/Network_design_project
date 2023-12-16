@@ -1,3 +1,11 @@
+conf t
+ip routing
+vlan 1
+vlan 2
+vlan 3
+vlan 4
+
+
 int vlan1
 ip add 192.168.1.1 255.255.255.240
 int vlan2
