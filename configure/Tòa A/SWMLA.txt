@@ -1,3 +1,11 @@
+conf t
+ip routing
+vlan 1
+vlan 2
+vlan 3
+vlan 4
+vlan 5
+
 int vlan1
 ip add 192.168.1.1 255.255.255.240
 int vlan2
@@ -14,3 +22,5 @@ ip add 172.16.6.2 255.255.255.252
 int g0/2
 no sw
 ip add 172.16.7.2 255.255.255.252
+
+
