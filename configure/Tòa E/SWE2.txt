@@ -1,0 +1,25 @@
+conf t
+hostname SWE2
+
+vlan 30
+int range f0/1	
+sw mode access 
+sw access vlan 30
+
+vlan 31
+int range f0/2
+sw mode acces 
+sw access vlan 31
+
+vlan 32
+int range f0/3-5	
+sw mode access 
+sw access vlan 32
+
+int g0/1
+sw mode trunk
+
+
+
+
+

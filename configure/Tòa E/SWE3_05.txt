@@ -1,0 +1,13 @@
+conf t
+hostname SWE3_05
+
+vlan 35
+int range f0/1-14	
+sw mode access 
+sw access vlan 35
+end
+
+
+
+
+
