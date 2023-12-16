@@ -1,0 +1,8 @@
+conf t 
+vlan 6
+int range f0/1-14
+sw mode acces
+sw access vlan 6
+
+int g0/1
+sw mode trunk
