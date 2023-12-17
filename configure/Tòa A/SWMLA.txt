@@ -26,4 +26,13 @@ ip add 172.16.7.2 255.255.255.252
 int range vlan1-5
 ip helper-address 192.168.5.3
 
+router ospf 1
+network 192.168.1.0 0.0.0.15 area 0
+network 192.168.2.0 0.0.0.15 area 0
+network 192.168.3.0 0.0.0.15 area 0
+network 192.168.4.0 0.0.0.7 area 0
+network 192.168.5.0 0.0.0.7 area 0
+network 172.16.6.0 0.0.0.3 area 0
+network 172.16.7.0 0.0.0.3 area 0
+
 
