@@ -1,0 +1,18 @@
+conf t
+hostname SWC3
+
+vlan 27
+int range f0/1
+sw mode access 
+sw access vlan 27
+
+vlan 28
+int range f0/2-4
+sw mode acces 
+sw access vlan 28
+
+int g0/1
+sw mode trunk
+
+
+
