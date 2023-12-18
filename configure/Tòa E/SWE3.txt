@@ -1,0 +1,52 @@
+conf t
+hostname SWE3
+
+vlan 33
+int range f0/1	
+sw mode access 
+sw access vlan 33
+exit
+
+vlan 34
+int range f0/2
+sw mode acces 
+sw access vlan 34
+exit
+
+vlan 35
+int range f0/3	
+sw mode access 
+sw access vlan 35
+exit
+
+vlan 36
+int range f0/4
+sw mode access 
+sw access vlan 36
+exit
+
+vlan 37
+int range f0/5
+sw mode acces 
+sw access vlan 37
+exit
+
+vlan 38
+int range f0/6	
+sw mode access 
+sw access vlan 38
+exit
+
+vlan 39
+int range f0/7
+sw mode access 
+sw access vlan 39
+exit
+
+int g0/1
+sw mode trunk
+
+
+
+
+
