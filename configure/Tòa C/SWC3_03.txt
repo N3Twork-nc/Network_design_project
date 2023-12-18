@@ -1,0 +1,20 @@
+conf t
+hostname SWE3.03
+
+vlan 27
+int range f0/1-24	
+sw mode access 
+sw access vlan 27
+
+int g0/1
+sw mode trunk
+
+
+
+
+
+
+
+
+
+
