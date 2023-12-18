@@ -1,0 +1,38 @@
+conf t
+ip routing
+vlan 1
+vlan 2
+vlan 3
+vlan 4
+vlan 5
+
+int vlan1
+ip add 192.168.1.1 255.255.255.240
+int vlan2
+ip add 192.168.2.1 255.255.255.240
+int vlan3
+ip add 192.168.3.1 255.255.255.240
+int vlan4
+ip add 192.168.4.1 255.255.255.248
+int vlan5
+ip add 192.168.5.1 255.255.255.248
+int g0/1
+no sw
+ip add 172.16.6.2 255.255.255.252 
+int g0/2
+no sw
+ip add 172.16.7.2 255.255.255.252
+
+int range vlan1-5
+ip helper-address 192.168.5.3
+
+router ospf 1
+network 192.168.1.0 0.0.0.15 area 0
+network 192.168.2.0 0.0.0.15 area 0
+network 192.168.3.0 0.0.0.15 area 0
+network 192.168.4.0 0.0.0.7 area 0
+network 192.168.5.0 0.0.0.7 area 0
+network 172.16.6.0 0.0.0.3 area 0
+network 172.16.7.0 0.0.0.3 area 0
+
+
