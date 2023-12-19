@@ -1,0 +1,13 @@
+conf t
+hostname SWE3.13
+
+vlan 39
+int range f0/1-14	
+sw mode access 
+sw access vlan 39
+end
+
+
+
+
+
