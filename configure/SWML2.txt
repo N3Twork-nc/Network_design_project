@@ -28,3 +28,12 @@ int f0/7
 no sw
 ip add 172.16.13.1 255.255.255.252
 no shut
+
+router ospf 1
+network 172.16.5.0 0.0.0.3 area 0
+network 172.16.7.0 0.0.0.3 area 0
+network 172.16.9.0 0.0.0.3 area 0
+network 172.16.11.0 0.0.0.3 area 0
+network 172.16.13.0 0.0.0.3 area 0
+network 172.16.2.0 0.0.0.3 area 0
+network 172.16.4.0 0.0.0.3 area 0

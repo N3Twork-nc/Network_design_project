@@ -7,3 +7,10 @@ switchport access vlan 1
 int g0/1
 switchport mode trunk
 
+
+
+
+
+
+end 
+cop run start

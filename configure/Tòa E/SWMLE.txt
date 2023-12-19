@@ -1,0 +1,81 @@
+conf t
+hostname SWMLE
+ip routing
+
+vlan 29
+int vlan 29
+ip add 192.168.29.1 255.255.255.248
+exit
+
+vlan 30
+int vlan 30
+ip add 192.168.30.1 255.255.255.240
+exit
+
+vlan 31
+int vlan 31
+ip add 192.168.31.1 255.255.255.224
+exit
+
+vlan 32
+int vlan 32
+ip add 192.168.32.1 255.255.255.248
+exit
+
+vlan 33
+int vlan 33
+ip add 192.168.33.1 255.255.255.240
+exit
+
+vlan 34
+int vlan 34
+ip add 192.168.34.1 255.255.255.240
+exit
+
+vlan 35
+int vlan 35
+ip add 192.168.35.1 255.255.255.240
+exit
+
+vlan 36
+int vlan 36
+ip add 192.168.36.1 255.255.255.240
+exit
+
+vlan 37
+int vlan 37
+ip add 192.168.37.1 255.255.255.240
+exit
+
+vlan 38
+int vlan 38
+ip add 192.168.38.1 255.255.255.240
+exit
+
+vlan 39
+int vlan 39
+ip add 192.168.39.1 255.255.255.240
+exit
+
+int g0/1 
+no sw
+ip add 172.16.12.2 255.255.255.252
+
+int g0/2 
+no sw
+ip add 172.16.13.2 255.255.255.252
+
+router ospf 1
+network 192.168.29.0 0.0.0.7 area 0
+network 192.168.30.0 0.0.0.15 area 0
+network 192.168.31.0 0.0.0.31 area 0
+network 192.168.32.0 0.0.0.7 area 0
+network 192.168.33.0 0.0.0.15 area 0
+network 192.168.34.0 0.0.0.15 area 0
+network 192.168.35.0 0.0.0.15 area 0
+network 192.168.36.0 0.0.0.15 area 0
+network 192.168.37.0 0.0.0.15 area 0
+network 192.168.38.0 0.0.0.15 area 0
+network 192.168.39.0 0.0.0.15 area 0
+network 172.16.12.0 0.0.0.3 area 0
+network 172.16.13.0 0.0.0.3 area 0
