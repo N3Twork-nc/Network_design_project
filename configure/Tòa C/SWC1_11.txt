@@ -1,5 +1,5 @@
 conf t
-hostname SWE1.11
+hostname SWC1.11
 
 vlan 22
 int range f0/1-24	
