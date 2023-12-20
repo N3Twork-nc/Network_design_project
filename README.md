@@ -13,6 +13,8 @@ Trường Đại học Công Nghệ Thông Tin
 - 1 tòa nhà C có 3 tầng gồm 24 phòng học + phòng csvc và 4 phòng thực hành
 - 1 tòa nhà E có 3 tầng với 36 phòng trong đó có 2 phòng thực hành thí nghiệm, 6 văn phòng khoa, 1 phòng lưu trữ server nghiên cứu và 1 phòng họp, còn lại là các phòng học
 ### 2. Sơ đồ
+![image](https://github.com/N3Twork-nc/Network_design_project/assets/101622624/ea8b22d4-73f8-48db-9498-f10dfb967bce)
+
 ![image](https://github.com/N3Twork-nc/Network_design_project/assets/101622624/d04aef36-c7a8-421b-8752-941de1814b7a)
 
 ### 3. Quy trình hoạt động
