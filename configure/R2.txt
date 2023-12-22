@@ -1,17 +1,21 @@
 conf t
-int g0/0/0
+int g0/0
 ip add 172.16.3.1 255.255.255.252
 no shut
-int g0/0/1
+
+int g1/0
 ip add 172.16.4.1 255.255.255.252
 no shut
-int s0/1/0
+
+int s2/0
 ip add 172.16.17.2 255.255.255.252
 no shut
-int s0/1/1 
+
+int s3/0
 ip add 172.16.18.2 255.255.255.252
 no shut
-int s0/2/0
+
+int g4/0
 ip add 172.16.16.2 255.255.255.252
 no shut
 
@@ -21,3 +25,6 @@ network 172.16.4.0 0.0.0.3 area 0
 network 172.16.16.0 0.0.0.3 area 0
 network 172.16.17.0 0.0.0.3 area 0
 network 172.16.18.0 0.0.0.3 area 0
+
+end
+cop run start
