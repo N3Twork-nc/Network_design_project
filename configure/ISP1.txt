@@ -2,7 +2,7 @@ conf t
 hostname ISP1
 
 int g0/0/0
-ip add 200.0.0.5 255.255.255.0
+ip add 172.16.19.1 255.255.255.252
 no shut
 
 int s0/1/0
@@ -17,20 +17,11 @@ exit
 router ospf 1
 network 172.16.14.0 0.0.0.3 area 0
 network 172.16.17.0 0.0.0.3 area 0
+network 172.16.19.0 0.0.0.3 area 0
 default-information originate 
 exit
 
-ip route 0.0.0.0 0.0.0.0 gigabitEthernet 0/0/0
-
-access-list 1 permit 192.168.0.0 0.0.255.255
-ip nat inside source list 1 interface g0/0/0 overload
-int s0/1/0
-ip nat inside
-int s0/1/1
-ip nat inside
-int g0/0/0
-ip nat outside
-
+ip route 0.0.0.0 0.0.0.0 172.16.19.2
 
 end
 cop run start
