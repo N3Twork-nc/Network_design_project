@@ -1,0 +1,16 @@
+conf t
+vlan 1
+int range f0/1-14
+switchport mode access
+switchport access vlan 1
+
+int g0/1
+switchport mode trunk
+
+
+
+
+
+
+end 
+cop run start

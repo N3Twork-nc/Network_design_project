@@ -1,0 +1,18 @@
+conf t
+hostname SWC1
+
+vlan 22
+int range f0/1
+sw mode access 
+sw access vlan 22
+
+vlan 23
+int range f0/2-4
+sw mode acces 
+sw access vlan 23
+
+int g0/1
+sw mode trunk
+
+
+

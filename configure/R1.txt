@@ -1,16 +1,31 @@
 conf t
-int g0/0/0
-ip add 172.16.1.1 255.255.255.252
-no shut
-int g0/0/1
+
+int g0/0
 ip add 172.16.2.1 255.255.255.252
 no shut
-int s0/1/0
+
+int g1/0
+ip add 172.16.2.1 255.255.255.252
+no shut
+
+int s2/0
 ip add 172.16.14.1 255.255.255.252
 no shut
-int s0/1/1 
+
+int s3/0 
 ip add 172.16.15.2 255.255.255.252
 no shut
-int s0/2/0
+
+int g4/0
 ip add 172.16.16.1 255.255.255.252
 no shut
+
+router ospf 1
+network 172.16.1.0 0.0.0.3 area 0
+network 172.16.2.0 0.0.0.3 area 0
+network 172.16.14.0 0.0.0.3 area 0
+network 172.16.16.0 0.0.0.3 area 0
+network 172.16.15.0 0.0.0.3 area 0
+
+end
+cop run start

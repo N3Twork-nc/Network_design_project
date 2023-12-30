@@ -1,0 +1,60 @@
+conf t
+hostname ISP2
+
+int g0/0/0
+ip add 201.0.0.5 255.255.255.0
+no shut
+
+int s0/1/0
+ip add 172.16.15.1 255.255.255.252
+no shut
+
+int s0/1/1
+ip add 172.16.18.1 255.255.255.252 
+no shut
+exit
+
+ip route 0.0.0.0 0.0.0.0 gigabitEthernet 0/0/0
+router ospf 1
+network 172.16.18.0 0.0.0.3 area 0
+network 172.16.15.0 0.0.0.3 area 0
+default-information originate 
+exit
+
+access-list 1 permit 192.168.0.0 0.0.255.255
+ip nat inside source list 1 interface g0/0/0 overload
+int s0/1/0
+ip nat inside
+int s0/1/1
+ip nat inside
+int g0/0/0
+ip nat outside
+
+aaa new-model
+aaa authentication login VPN-AUTHEN local
+aaa authorization network VPN-AUTHOR local
+username admin password group5@123
+crypto isakmp policy 10
+encryption 3des
+hash md5
+authentication pre-share
+group 2
+exit
+ip local pool VPN-CLIENT 10.10.10.10 10.10.10.50
+crypto isakmp client configuration group group5
+key UIT@123
+pool VPN-CLIENT
+crypto ipsec transform-set SET1 esp-3des esp-md5-hmac
+crypto dynamic-map MAP1 10
+set transform-set SET1
+reverse-route
+exit
+crypto map MAP1 client authentication list VPN-AUTHEN
+crypto map MAP1 client configuration address respond
+crypto map MAP1 isakmp authorization list VPN-AUTHOR
+crypto map MAP1 10 ipsec-isakmp dynamic MAP1
+interface g0/0/0
+crypto map MAP1
+
+end
+cop run start

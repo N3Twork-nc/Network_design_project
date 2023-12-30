@@ -1,0 +1,64 @@
+conf t
+hostname SWMLC
+ip routing
+
+vlan 22
+int vlan 22
+ip add 192.168.22.1 255.255.255.192
+exit
+
+vlan 23
+int vlan 23
+ip add 192.168.23.1 255.255.255.248
+exit
+
+vlan 24
+int vlan 24
+ip add 192.168.24.1 255.255.255.192
+exit
+
+vlan 25
+int vlan 25
+ip add 192.168.25.1 255.255.255.192
+exit
+
+vlan 26
+int vlan 26
+ip add 192.168.26.1 255.255.255.248
+exit
+
+vlan 27
+int vlan 27
+ip add 192.168.27.1 255.255.255.192
+exit
+
+vlan 28
+int vlan 28
+ip add 192.168.28.1 255.255.255.248
+exit
+
+int g0/1 
+no sw
+ip add 172.16.10.2 255.255.255.252
+
+int g0/2 
+no sw
+ip add 172.16.11.2 255.255.255.252
+
+router ospf 1
+network 192.168.22.0 0.0.0.63 area 0
+network 192.168.23.0 0.0.0.7 area 0
+network 192.168.24.0 0.0.0.63 area 0
+network 192.168.25.0 0.0.0.63 area 0
+network 192.168.26.0 0.0.0.7 area 0
+network 192.168.27.0 0.0.0.63 area 0
+network 192.168.28.0 0.0.0.7 area 0
+network 172.16.10.0 0.0.0.3 area 0
+network 172.16.11.0 0.0.0.3 area 0
+
+int range vlan22-28
+ip helper-address 192.168.5.3
+
+
+end
+cop run start
