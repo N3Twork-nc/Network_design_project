@@ -2,7 +2,7 @@ conf t
 hostname ISP2
 
 int g0/0/0
-ip add 172.16.0.5 255.255.255.252
+ip add 201.0.0.5 255.255.255.0
 no shut
 
 int s0/1/0
