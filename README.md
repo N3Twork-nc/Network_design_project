@@ -1,5 +1,5 @@
 #  Designed Network Infrastructure for UIT
-Subject: Network Design 
+Subject: Network Design - NT113
 ## Members
 1. Nguyen Cao Thi
 2. Nguyen Tra Bao Ngan
